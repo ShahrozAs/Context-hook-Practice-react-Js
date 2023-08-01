@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Child from '../src/Components/Child'
+import React,{useContext} from "react";
+import SuperChild from "./Components/SuperChild";
+import { ChildContext } from "../src/Components/Child";
 
 function App() {
+  const {color} = useContext(ChildContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={{color:color}}>App Component</h1>
+      <Child/>
+      <SuperChild/>
     </div>
   );
 }
